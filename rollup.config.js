@@ -1,11 +1,13 @@
-import buble from 'rollup-plugin-buble'
+const typescript = require('rollup-plugin-typescript2')
 
-export default {
-  input: 'src/index.js',
+module.exports = {
+  input: 'src/index.ts',
   output: {
     name: 'chordMagic'
   },
   plugins: [
-    buble()
+    typescript({
+      tsconfig: './tsconfig.json'
+    })
   ]
 }

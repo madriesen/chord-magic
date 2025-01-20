@@ -1,4 +1,6 @@
-const English = {
+import { NoteNaming, NoteNamingType } from './types'
+
+const English: NoteNaming = {
   A: ['A'],
   Bb: ['Bb', 'A#', 'Asharp', 'Bflat'],
   B: ['B'],
@@ -13,7 +15,7 @@ const English = {
   Ab: ['Ab', 'G#', 'Aflat', 'Gsharp']
 }
 
-const NorthernEuropean = {
+const NorthernEuropean: NoteNaming = {
   A: ['A'],
   Bb: ['B', 'A#', 'Asharp'],
   B: ['H'],
@@ -28,7 +30,7 @@ const NorthernEuropean = {
   Ab: ['Ab', 'G#', 'Aflat', 'Gsharp']
 }
 
-const SouthernEuropean = {
+const SouthernEuropean: NoteNaming = {
   A: ['La'],
   Bb: ['Tib', 'La#'],
   B: ['Ti'],
@@ -43,7 +45,7 @@ const SouthernEuropean = {
   Ab: ['Lab', 'So#', 'Sol#']
 }
 
-export const noteNamings = {
+export const noteNamings: Record<NoteNamingType, NoteNaming> = {
   English,
   NorthernEuropean,
   SouthernEuropean

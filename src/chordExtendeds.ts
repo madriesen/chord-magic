@@ -1,4 +1,6 @@
-export const chordExtendeds = {
+import { ChordExtendeds } from './types'
+
+export const chordExtendeds: ChordExtendeds = {
   // sevenths
   Major7: ['Major', ['maj7', 'Maj7', 'M7', '+7']],
   Minor7: ['Minor', ['m7', 'Min7', 'min7', 'minor7', '-7']],

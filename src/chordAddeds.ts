@@ -1,4 +1,6 @@
-export const chordAddeds = {
+import { ChordAddeds } from './types'
+
+export const chordAddeds: ChordAddeds = {
   Add9: ['add9', '2'],
   Add11: ['add11', '4'],
   Major6: ['6', 'maj6', 'major6', 'M6'],

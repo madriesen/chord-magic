@@ -1,4 +1,6 @@
-export const chordRoots = [
+import { Chords } from './types'
+
+export const chordRoots: Chords[] = [
   'A',
   'Bb',
   'B',

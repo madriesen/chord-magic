@@ -1,6 +1,7 @@
 import { chordRoots } from './chordRoots'
+import { Chords, ParsedChord } from './types'
 
-function transposeNote (note, num) {
+function transposeNote (note: Chords, num: number): Chords {
   let idx = chordRoots.indexOf(note)
 
   if (idx === -1) {
@@ -15,19 +16,15 @@ function transposeNote (note, num) {
     idx = (chordRoots.length + idx) % chordRoots.length
   }
 
-  return chordRoots[idx]
+  return chordRoots[idx] as Chords
 }
 
-export function transpose (chord, num) {
-  if (typeof num !== 'number') {
-    throw new Error('you need to provide a number')
-  }
-
-  let transposedChord = JSON.parse(JSON.stringify(chord))
+export function transpose (chord: ParsedChord, num: number): ParsedChord {
+  const transposedChord = JSON.parse(JSON.stringify(chord)) as ParsedChord
 
   transposedChord.root = transposeNote(chord.root, num)
 
-  if (chord.overridingRoot) {
+  if (chord.overridingRoot !== undefined) {
     transposedChord.overridingRoot = transposeNote(chord.overridingRoot, num)
   }
 
